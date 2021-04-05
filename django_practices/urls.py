@@ -18,6 +18,7 @@ from django.urls import path
 
 import helloworld.views as helloworldviews
 import emaillist01.views as emaillist01view
+import guestbook01.views as guestbook01view
 
 urlpatterns = [
     # POST방식을 사용하면 / 생략
@@ -29,7 +30,14 @@ urlpatterns = [
 
     # emaillist01
     path('emaillist01/', emaillist01view.index),
+    path('emaillist01/form', emaillist01view.form),
+    path('emaillist01/add', emaillist01view.add),
 
+    # guestbook01
+    path('guestbook01/', guestbook01view.index),
+    path('guestbook01/add', guestbook01view.add),
+    path('guestbook01/delete', guestbook01view.delete),
+    path('guestbook01/deleteform', guestbook01view.deleteform),
 
     path('admin/', admin.site.urls),
 ]

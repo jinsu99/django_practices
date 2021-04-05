@@ -35,6 +35,8 @@ def join(request):
     description = request.POST["desc"]
 
     print(email, password, gender, hobbies, description)
+
+    # POST 방식일 때 html으로 하니까 오류발생
     return HttpResponse('OK', content_type='text/plain; charset=utf-8')
 
 
