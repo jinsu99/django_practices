@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form 연습하기</title>
+</head>
+<body>
+    <h1>회원 가입 </h1>
+    <form action="/join" method="post"> {% csrf_token %}
+        이메일 : <input type="text" name="email" value=""><br>
+        비밀번호 : <input type="password" name="password" value=""><br>
+        성별 : <input type="radio" name="gender" value="female" checked="checked">F<input type="radio" name="gender" value="male">M<br>
+        취미 :
+        <input type="checkbox" name="hobbies" value="swimming">수영
+        <input type="checkbox" name="hobbies" value="coding">코딩
+        <input type="checkbox" name="hobbies" value="reading">독서
+        <input type="checkbox" name="hobbies" value="cooking">요리
+        <br/><br/>
+        자기소개 : <br>
+        <textarea name="desc" style="width:300px; height:100px"></textarea>
+        <br>
+
+        <br><input type="submit" value="가입">
+    </form>
+</body>
+</html>

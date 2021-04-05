@@ -17,10 +17,19 @@ from django.contrib import admin
 from django.urls import path
 
 import helloworld.views as helloworldviews
+import emaillist01.views as emaillist01view
 
 urlpatterns = [
+    # POST방식을 사용하면 / 생략
+    path('join', helloworldviews.join),
+    path('form/', helloworldviews.form),
     path('hello1/', helloworldviews.hello1),
-    path('hello2/', helloworldviews.hello2),
+    path('', helloworldviews.main), # Main 으로 정의
     path('tags/', helloworldviews.tags),
+
+    # emaillist01
+    path('emaillist01/', emaillist01view.index),
+
+
     path('admin/', admin.site.urls),
 ]

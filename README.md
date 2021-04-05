@@ -19,7 +19,7 @@
 ### 6. 초기 설정 (setting.py) 
 1) time zone 설정
 ```python
-TIME_ZON = 'Aasia/Seoul'
+TIME_ZONE = 'Asia/Seoul'
 ```
 2) database 설정 (line 76)
 ```python
@@ -76,6 +76,11 @@ django_practice
 ```shell
 (venv) # python manage.py startapp helloworld
 ```
+```text
+django_practice
+|-- helloworld
+|-- templates
+```
 2) appllication 등록 (settings.py : line 33)
 ```python
 INSTALLED_APPS = [
@@ -92,9 +97,10 @@ INSTALLED_APPS = [
 3) application template 디렉토리 생성
 ```text
 django_practice
+|-- helloworld
 |-- templates
     |-- helloworld
-        | -- hello2.html 
+        |-- test.html
 ```
 4-1. urls.py(프로젝트)에 url 등록 (path)
 ```python
@@ -102,8 +108,7 @@ django_practice
 import helloworld.views as helloworldviews
 
 urlpatterns = [
-    path('hello1/',helloworldviews.hello1)
-    path('hello2/',helloworldviews.hello2)
+    path('test/',helloworldviews.test)
     # 어플리케이션 요청 처리 함수 생성! ▲▲▲▲
     path('admin/', admin.site.urls),
 ]
@@ -123,9 +128,9 @@ def hello1(request):
 
 def hello2(request):
     # render
-    return render(request, 'helloworld/hello2.html') 
+    return render(request, 'helloworld/test.html') 
 ```
-✔ 생성하고 서버를 실행한 다음 http://localhost:9999/hello1 에서 확인해보자
+✔ 생성하고 서버를 실행한 다음 http://localhost:9999/test 에서 확인해보자
 
 4-3. template(html) 연결
 ... 반복
