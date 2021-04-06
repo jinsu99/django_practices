@@ -5,7 +5,7 @@ from guestbook01 import models
 
 def index(request):
     results = models.findall()
-    data = {"guestbook01_list": results} # list형태로 받아온다
+    data = {"guestbook01_list": results}
     return render(request, 'guestbook01/index.html', data)
 
 
@@ -22,9 +22,15 @@ def add(request):
 
 
 def deleteform(request):
-    results = request.GET['no']
-    data = {"no": results}
-    return render(request, 'guestbook01/deleteform.html', data)
+    # results = request.GET['no']
+    # data = {"no": results}
+    # return render(request, 'guestbook01/deleteform.html', data)
+
+    # 위와같이 전달하면 html에서 {{no}}로 사용
+    # 혹은 따로 data를 전달하지않고, {{request.GET.no}}로 사용할수도 있다.
+    # tmplates에도 request가 내장되어있기때문
+
+    return render(request, 'guestbook01/deleteform.html')
 
 
 def delete(request):

@@ -6,7 +6,7 @@
 <body>
 	<form action="/guestbook01/delete" method="post">
 	{% csrf_token %}
-	<input type="text" name="no" value={{ no }} >
+	<input type="hidden" name="no" value={{ request.GET.no }} >
 	<table>
 		<tr>
 			<td>비밀번호</td>
