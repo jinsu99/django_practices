@@ -135,6 +135,31 @@ def hello2(request):
 4-3. template(html) 연결
 ... 반복
 
+5) template filter 사용
+- linebreaksbr      : 'aaaa\nbbbb'    |    'aaaa&lt;br>bbbb'
+- mathfilters
+  1. 설치
+        ```shell
+        (venv) # pip install django-mathfilters
+        ```
+  2. 설정 (setting.py / line33)
+        ```python
+        INSTALLLED_APPS = [            
+            'mathfilters',
+            ...
+        ]
+        ```
+  3. 사용 : import와 같은 과정이 필요 = load
+        ```html
+        {% load mathfilters %}
+        <html>
+        ...
+        <p>
+            10 - 5 + 1 = {{ 10 | sub:5 | add: 1 }}
+        </p>  
+        ```
+
+
 
 [참고] html 파일 만들 때, 폴더 우클릭 > new > html파일 > html4,5,xml 선택 가능
 
